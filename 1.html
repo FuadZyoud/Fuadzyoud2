@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<body>
+
+<select name='lang' class='language-select'>
+    <option value='en'>English</option>
+    <option value='fr'>French</option>
+    <option value='sp'>Spanish</option>
+	<option value='ar'>العربية</option>
+</select>
+
+<!-- this wont be shown to the user + google will ignore it because it's a script  -->
+<div class='article' data-current-language='en'>
+   <strong>hello</strong>, lorem ipsum dolor
+</div>
+<script type='text/html-template' lang='fr'>
+    <strong>bonjour</strong>, lorem ipsum dolor
+</script>
+<script type='text/html-template' lang='sp'>
+    <strong>hola</strong>, lorem ipsum dolor
+</script>
+
+<script type='text/html-template' lang='sp'>
+    <strong>مرحباً</strong>، تحياي فؤاد الزيود
+</script>
+
+<script type='text/javascript'>
+$(document).ready(function() {
+    $('select.language-select').on('change', function(evt) {
+        var selectedLanguage = $(this).find('option:selected').val(),
+            articleHtml = $('script[type="text/html-template"][lang=' + selectedLanguage + ']').html(),
+            article = $('div.article');
+        article.html(articleHtml);
+    });
+});
+</script>
+</body>
+</html>
