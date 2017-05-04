@@ -404,7 +404,7 @@ box-shadow: 0 0 10px #555;
 .cover .widget-twitter ul li span { position:relative; }
 .cover .widget-twitter ul li span + a { margin-left: 1em; color:#aaa; }
 /* update : v.1.1 */
-.widget-twitter ul li p { margin: 3em; display: inline; }
+.widget-twitter ul li p { margin: 1em; display: inline; }
 .widget-twitter ul li p.interact { display: none; }
 .widget-twitter ul li p.timePosted { margin-left: 1.2em; color:#aaa; }
 /* update : v.1.2 */
