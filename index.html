@@ -28,7 +28,7 @@
 
 		<meta property="og:title" content="Fuad Al Zyoud"/>
 
-		<meta property="og:image" content="/assets/images/fms.png"/>
+		<meta property="og:image" content="https://fuadzyoud.github.io//assets/images/fms.png"/>
 
 		<meta property="og:site_name" content="fmsmods.esy.es"/>
 
@@ -56,7 +56,7 @@
 
 			<div id="wrapper">
 
-				<!-- Home -->
+			<!-- Home -->
 
 					<article id="home" class="panel special">
 
@@ -107,11 +107,11 @@
 
 								<ul class="icons">
 
-									<li><a href="https://twitter.com/FuadZyoud" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+									<li><a onclick="Twitter()" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
 
-									<li><a href="https://fb.com/FMS.Mods" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+									<li><a onclick="Facebook()" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
 
-									<li><a href="mailto:fms.zyoud@gmail.com" class="icon fa-envelope"><span class="label">Email</span></a></li>
+									<li><a onclick="Email()" class="icon fa-envelope"><span class="label">Email</span></a></li>
 
 								</ul>
 
@@ -527,6 +527,39 @@ $('#submitBtn').removeAttr('disabled');
 
 </script>
 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<script>
+function Twitter() {
+  if (confirm("الدعم على تويتر\n\nبالضغط على هذا الرابط سيأخذك إلى موقع تويتر. \n\nهل ترغب فعلا بدعمي ومتابعتي على تويتر؟") == true) {
+    window.open('https://twitter.com/FuadZyoud', '_blank');
+    return true;
+  } else {
+    return false;
+  }
+}
+</script>
+
+<script>
+function Facebook() {
+  if (confirm("الدعم على الفيسبوك\n\nبالضغط على هذا الرابط سيأخذك إلى موقع الفيسبوك. \n\nهل ترغب فعلا بدعمي ومتابعتي على الفيسبوك؟") == true) {
+    window.open('https://fb.com/FMS.Mods', '_blank');
+    return true;
+  } else {
+    return false;
+  }
+}
+</script>
+
+<script>
+function Email() {
+  if (confirm("التواصل مع المطور\n\nبالضغط على هذا الرابط سيأخذك إلى إرسال بريد الكتروني. \n\nهل ترغب فعلا بالتواصل مع المطور") == true) {
+    window.location='mailto:fms.zyoud@gmail.com';
+    return true;
+  } else {
+    return false;
+  }
+}
+</script>
 
 	</body>
 </html>
