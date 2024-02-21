@@ -1,5 +1,11 @@
-Version=1.0.3
-UpdateDetails=This update includes:
-- Bug fixes
-- Performance improvements
-- New features
+{
+  "♡F.M.S♡Mods": [
+    {
+ "version":"1.0.3",
+ "title":"♡F.M.S♡Mods Update",
+ "description":"Server Changed
+Other Improvements",
+"download":"https://fuadzyoud.github.io/iptv/"
+}
+  ]
+}
