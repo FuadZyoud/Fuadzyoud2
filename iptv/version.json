@@ -1,6 +1,6 @@
 {
-  "versionCode": 2,
-  "versionName": "1.0.3",
+  "versionCode": 3,
+  "versionName": "1.0.5",
   "updateMessage": "Change the server and login details. /n You need to delete the old version of the app before installing the new version.",
   "downloadUrl": "https://fuadzyoud.github.io/iptv/"
 }
