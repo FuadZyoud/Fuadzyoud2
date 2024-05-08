@@ -5,14 +5,13 @@ document.addEventListener("DOMContentLoaded", function() {
   fetch("data.json")
     .then(response => response.json())
     .then(data => {
+      // Get the first link from the JSON data
+      const link = data.links[0];
+      
       // Handle button click event
       button.addEventListener("click", function() {
-        // Choose a random link from the JSON data
-        const randomIndex = Math.floor(Math.random() * data.links.length);
-        const randomLink = data.links[randomIndex];
-        
         // Open the link in a new tab
-        window.open(randomLink);
+        window.open(link);
       });
     })
     .catch(error => {
