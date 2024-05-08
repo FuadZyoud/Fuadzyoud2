@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function() {
             let releaseNote = data.releaseNote;
             
             // Replace newline characters with HTML line breaks
-            releaseNote = releaseNote.replace(/\n/, '<br>');
+            releaseNote = releaseNote.replace(//n/g, '<br>');
             
             // Update the text with the version name
             document.getElementById('versionText').innerText = `Click the button to download ♡F.M.S♡Mods IPTV version ${versionName}`;
