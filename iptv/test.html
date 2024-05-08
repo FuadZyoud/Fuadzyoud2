@@ -25,7 +25,7 @@
 <script>
 function downloadIPTV() {
     // Fetch version JSON file
-    fetch('version.json')
+    fetch('/version.json')
         .then(response => response.json())
         .then(data => {
             // Get versionName from version.json
