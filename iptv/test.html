@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Download ♡F.M.S♡Mods IPTV</title>
+<title>XML Link Viewer</title>
 <style>
     body {
         font-family: Arial, sans-serif;
@@ -20,12 +20,12 @@
 
 <h2 id="versionText">Click the button to download ♡F.M.S♡Mods IPTV version %</h2>
 
-<button onclick="downloadIPTV()">Download Now</button>
+<button onclick="openLinkFromXML()">Download Now</button>
 
 <script>
-function downloadIPTV() {
+document.addEventListener('DOMContentLoaded', function() {
     // Fetch version JSON file
-    fetch('/version.json')
+    fetch('version.json')
         .then(response => response.json())
         .then(data => {
             // Get versionName from version.json
@@ -33,10 +33,26 @@ function downloadIPTV() {
             
             // Update the text with the version name
             document.getElementById('versionText').innerText = `Click the button to download ♡F.M.S♡Mods IPTV version ${versionName}`;
-            
-            // You can add more logic here to trigger the download
         })
         .catch(error => console.error('Error fetching version JSON:', error));
+});
+
+function openLinkFromXML() {
+    // Fetch XML file
+    fetch('data.xml')
+        .then(response => response.text())
+        .then(data => {
+            // Parse XML
+            const parser = new DOMParser();
+            const xmlDoc = parser.parseFromString(data, 'text/xml');
+            
+            // Extract link from XML (assuming the link is inside a <link> tag)
+            const link = xmlDoc.getElementsByTagName('link')[0].textContent;
+            
+            // Open link in a new tab
+            window.open(link, '_blank');
+        })
+        .catch(error => console.error('Error fetching XML:', error));
 }
 </script>
 
