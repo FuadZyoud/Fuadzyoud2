@@ -3,26 +3,67 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>XML Link Viewer</title>
+<title>♡F.M.S♡Mods IPTV</title>
 <style>
     body {
         font-family: Arial, sans-serif;
         text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+    div {
+        margin: 20px;
+        white-space: pre-line; /* Preserve newline characters */
     }
     button {
-        padding: 10px 20px;
-        font-size: 16px;
+        padding: 20px;
+        font-size: 20px;
+        color: white;
+        border-radius: 40px;
+        background: linear-gradient(#12c2e9, #c471ed, #f64f59);
         cursor: pointer;
+        background-size: 200% 200%;
+        background-position: 200% 200%;
+        width: auto; /* Adjust width dynamically */
+    }
+    button:hover {
+        background-position: 100% 100%;
     }
 </style>
 </head>
 <body>
 
-<h2>Click the button to open the link from XML</h2>
+<h2 id="versionText">Click the button to download ♡F.M.S♡Mods IPTV version %</h2>
+<div id="releaseNote"></div>
 
-<button onclick="openLinkFromXML()">Open Link</button>
+<button onclick="openLinkFromXML()">Download Now</button>
 
 <script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Fetch version JSON file
+    fetch('version.json')
+        .then(response => response.json())
+        .then(data => {
+            // Get versionName and releaseNote from version.json
+            const versionName = data.versionName;
+            let releaseNote = data.releaseNote;
+            
+            // Split releaseNote into bullet points
+            const bulletPoints = releaseNote.split('/n').map(point => `<li>${point}</li>`).join('');
+            
+            // Update the text with the version name
+            document.getElementById('versionText').innerText = `Click the button to download ♡F.M.S♡Mods IPTV version ${versionName}`;
+            
+            // Update the release note as a list
+            document.getElementById('releaseNote').innerHTML = `<ul>${bulletPoints}</ul>`;
+        })
+        .catch(error => console.error('Error fetching version JSON:', error));
+});
+
 function openLinkFromXML() {
     // Fetch XML file
     fetch('data.xml')
