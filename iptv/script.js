@@ -1,12 +1,16 @@
 document.addEventListener("DOMContentLoaded", function() {
   const button = document.getElementById("openLinkBtn");
 
-  // Fetch JSON file
-  fetch("data.json")
-    .then(response => response.json())
-    .then(data => {
-      // Get the first link from the JSON data
-      const link = data.links[0];
+  // Fetch XML file
+  fetch("data.xml")
+    .then(response => response.text())
+    .then(text => {
+      // Parse XML
+      const parser = new DOMParser();
+      const xml = parser.parseFromString(text, "text/xml");
+      
+      // Get the first link from the XML data
+      const link = xml.querySelector("link").textContent;
       
       // Handle button click event
       button.addEventListener("click", function() {
@@ -15,6 +19,6 @@ document.addEventListener("DOMContentLoaded", function() {
       });
     })
     .catch(error => {
-      console.error("Error fetching JSON:", error);
+      console.error("Error fetching XML:", error);
     });
 });
