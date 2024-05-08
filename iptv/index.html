@@ -3,36 +3,44 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Button to Open Link from XML</title>
+<title>XML Link Viewer</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+    }
+    button {
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+</style>
 </head>
 <body>
 
-<button id="openLinkBtn">Open Link</button>
+<h2>Click the button to open the link from XML</h2>
 
-<script document.addEventListener("DOMContentLoaded", function() {
-  const button = document.getElementById("openLinkBtn");
+<button onclick="openLinkFromXML()">Open Link</button>
 
-  // Fetch XML file
-  fetch("data.xml")
-    .then(response => response.text())
-    .then(text => {
-      // Parse XML
-      const parser = new DOMParser();
-      const xml = parser.parseFromString(text, "text/xml");
-      
-      // Get the first link from the XML data
-      const link = xml.querySelector("link").textContent;
-      
-      // Handle button click event
-      button.addEventListener("click", function() {
-        // Open the link in a new tab
-        window.open(link);
-      });
-    })
-    .catch(error => {
-      console.error("Error fetching XML:", error);
-    });
-});
-></script>
+<script>
+function openLinkFromXML() {
+    // Fetch XML file
+    fetch('data.xml')
+        .then(response => response.text())
+        .then(data => {
+            // Parse XML
+            const parser = new DOMParser();
+            const xmlDoc = parser.parseFromString(data, 'text/xml');
+            
+            // Extract link from XML (assuming the link is inside a <link> tag)
+            const link = xmlDoc.getElementsByTagName('link')[0].textContent;
+            
+            // Open link in a new tab
+            window.open(link, '_blank');
+        })
+        .catch(error => console.error('Error fetching XML:', error));
+}
+</script>
+
 </body>
 </html>
