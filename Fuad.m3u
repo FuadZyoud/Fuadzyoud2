@@ -3,4 +3,10 @@
 http://dom.mo1tv.com:25443/live/6532223234/4874738838/139060.ts
 
 #EXTINF:-1 tvg-id="JeemTV.qa" tvg-name="|.AR.| JEEM" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrG45yRGc2f27eiy3-4Ixaq8QMnEz4FTpbYczRzWbMLe7CM_usal_WwJo&s" group-title="ARABIC ATFAL",|.AR.| JEEM
-http://dom.mo1tv.com:25443/live/6532223234/4874738838/60777.ts
+http://zaintv.xyz:8080/live/A12345678/A12345678/549.ts
+
+#EXTINF:-1 tvg-id="Laarn Frnch 1" tvg-name="|.AR.| Laarn Frnch 1" group-title=" Laarn Frnch 1",|.AR.|  Laarn Frnch 1
+http://zaintv.xyz:8080/live/A12345678/A12345678/136861.ts
+
+#EXTINF:-1 tvg-id="Laarn Frnch 2" tvg-name="|.AR.| Laarn Frnch 2" group-title=" Laarn Frnch 2",|.AR.|  Laarn Frnch 2
+http://zaintv.xyz:8080/live/A12345678/A12345678/136862.ts
