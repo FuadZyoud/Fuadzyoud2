@@ -3,7 +3,9 @@
     {
  "version":"1.0.2",
  "title":"New Update",
- "description":"♡F.M.S♡Mods IPTV New Update",
+ "description":"♡F.M.S♡Mods IPTV New Update
+تغيير البرنامج
+اضافة زر تحديث",
 "download":"https://fuadzyoud.github.io/iptv/"
 }
   ]
