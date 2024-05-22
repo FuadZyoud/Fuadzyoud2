@@ -1,5 +1,5 @@
 {
-  "fmsods_update": [
+  "fmsmods_update": [
     {
  "version":"1.0.2",
  "title":"New Update",
