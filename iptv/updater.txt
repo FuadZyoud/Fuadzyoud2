@@ -1,0 +1,16 @@
+{
+  "fnmods_update": [
+    {
+ "version":"1.0.2",
+ "title":"New Update",
+ "description":"Test Message
+
+〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️
+
+Nuevo Systema de Actualización 
+
+ Actualización AntiBaneo disponible ",
+"download":"https://youtu.be/rY2otd2NacA"
+}
+  ]
+}
