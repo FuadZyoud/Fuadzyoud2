@@ -6,8 +6,6 @@
  "description":"♡F.M.S♡Mods IPTV New Update
 تغيير البرنامج
 اضافة زر تحديث
-1
-2
 ",
 "download":"https://fuadzyoud.github.io/iptv/"
 }
