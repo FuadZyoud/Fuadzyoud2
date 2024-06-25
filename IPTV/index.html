@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>♡F.M.S♡Mods IPTV</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    /* Additional styles for right-to-left text */
+    #releaseNote ul {
+      text-align: right;
+      direction: rtl;
+      list-style-position: inside;
+    }
+    .release-date {
+      color: red;
+    }
+    .fmscolor {
+      color: red;
+      font-weight: bold;
+    }
+    .logo-img {
+      width: 50px; /* Adjusted size */
+      height: 50px; /* Adjusted size */
+    }
+  </style>
+</head>
+<body class="flex flex-col min-h-screen">
+  <header class="px-4 lg:px-6 h-14 flex items-center bg-gray-100 border-b border-gray-300">
+    <a href="index.html" class="flex items-center justify-center">
+      <img class="logo-img" src="fms.png" alt="FMS Logo">
+      <span class="sr-only">♡F.M.S♡Mods IPTV</span>
+    </a>
+  </header>
+  <main class="flex-1">
+    <section class="w-full py-12 md:py-24 lg:py-32 bg-gray-200">
+      <div class="container mx-auto flex flex-col items-center gap-6 px-4 md:px-6 lg:gap-10">
+        <div class="space-y-2 text-center">
+          <h1 class="text-3xl font-bold tracking-tighter md:text-4xl text-gray-800">Download ♡F.M.S♡Mods IPTV</h1>
+          <p class="max-w-lg mx-auto text-gray-600 md:text-xl lg:text-base xl:text-xl" id="versionText">Get the latest version <span class="fmscolor" id="versionName"></span> Build <span class="fmscolor" id="versionCode"></span> of our powerful IPTV and start watching.</p>
+          <div class="flex flex-col gap-2 sm:flex-row justify-center">
+            <a id="downloadButton" class="inline-flex h-10 items-center justify-center rounded-md bg-blue-600 px-8 text-sm font-medium text-white shadow transition-colors hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2">Download App</a>
+          </div>
+        </div>
+        <div class="bg-white rounded-lg p-6 shadow w-full max-w-lg space-y-2 text-center">
+          <h1 class="text-2xl font-bold mb-4 text-gray-800">Update Details <span class="release-date" id="releasedate"></span></h1>
+          <p id="releaseNote" class="text-gray-600 whitespace-pre-line"></p>
+          <a id="codeButton" class="inline-flex h-10 items-center justify-center rounded-md bg-blue-600 px-8 text-sm font-medium text-white shadow transition-colors hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2">Download Codes</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="flex flex-col gap-2 sm:flex-row py-6 w-full items-center px-4 md:px-6 border-t border-gray-300 bg-gray-100">
+    <p class="text-xs text-gray-600">&copy; 2024 Fuad Al Zyoud. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Fetch version JSON file
+      fetch('update.json')
+          .then(response => response.json())
+          .then(data => {
+              // Get versionName, versionCode, releasedate, and releaseNote from version.json
+              const { versionName, versionCode, releasedate, releaseNote, appUrl, codeUrl } = data;
+
+              // Split releaseNote into bullet points
+              const bulletPoints = releaseNote.split('\n').map(point => `<li>${point}</li>`).join('');
+              
+              // Update the text with the version name, version code, and release date
+              document.getElementById('versionName').innerText = versionName;
+              document.getElementById('versionCode').innerText = versionCode;
+              document.getElementById('releasedate').innerText = releasedate;
+              
+              // Update the release note as a list with right-to-left text
+              document.getElementById('releaseNote').innerHTML = `<ul>${bulletPoints}</ul>`;
+
+              // Set the download button click handler to open appUrl in a new tab
+              document.getElementById('downloadButton').addEventListener('click', function() {
+                window.open(appUrl, '_blank');
+              });
+
+              // Set the code button click handler to open codeUrl in a new tab
+              document.getElementById('codeButton').addEventListener('click', function() {
+                window.open(codeUrl, '_blank');
+              });
+          })
+          .catch(error => console.error('Error fetching version JSON:', error));
+    });
+  </script>
+
+</body>
+</html>
